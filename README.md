@@ -1,1 +1,1 @@
-# hitchhike
+# HitchHike
