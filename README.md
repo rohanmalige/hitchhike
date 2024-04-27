@@ -23,4 +23,3 @@ Feel free to contribute to HitchHike and help us shape the future of ride-sharin
 ---
 
 *Note: This README is a work in progress and will be updated as HitchHike continues to evolve.*
--
