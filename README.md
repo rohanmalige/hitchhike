@@ -7,7 +7,7 @@ Welcome to HitchHike, your go-to ride-sharing application for convenient, effici
 
 ## What's Unique About Us
 
-HitchHike revolutionizes the ride-sharing experience by putting the power in the hands of the driver. Unlike traditional ride-sharing platforms where riders request a ride and drivers have the option to accept or decline, HitchHike allows drivers to post their ride with their desired destination. This empowers drivers to express where they intend to go, and riders can then choose whether they want to join them or not. Say goodbye to the inconvenience of driving to locations you don't want to go to. With HitchHike, drivers take control of their journey, and riders enjoy the freedom to choose their destinations.
+HitchHike revolutionizes the ride-sharing experience by putting the power in the hands of the driver. In addition to the traditional ride-sharing platforms where riders request a ride and drivers have the option to accept or decline, HitchHike allows drivers to post their ride with their desired destination. This empowers drivers to express where they intend to go, and riders can then choose whether they want to join them or not. Say goodbye to the inconvenience of driving to locations you don't want to go to. With HitchHike, drivers take control of their journey, and riders enjoy the freedom to choose their destinations.
 
 
 ## Student-Centric Focus
