@@ -10,6 +10,17 @@ Welcome to HitchHike, your go-to ride-sharing application for convenient, effici
 HitchHike revolutionizes the ride-sharing experience by putting the power in the hands of the driver. Unlike traditional ride-sharing platforms where riders request a ride and drivers have the option to accept or decline, HitchHike allows drivers to post their ride with their desired destination. This empowers drivers to express where they intend to go, and riders can then choose whether they want to join them or not. Say goodbye to the inconvenience of driving to locations you don't want to go to. With HitchHike, drivers take control of their journey, and riders enjoy the freedom to choose their destinations.
 
 
+## Student-Centric Focus
+
+According to a survey conducted on 50+ students:
+
+- **Frequency of Travel**: While 47% of students travel home or to points of interest once a semester, 31.3% travel multiple times a semester, indicating a demand for reliable transportation options.
+
+- **Interest in Student-Centered Carpooling**: An overwhelming 84.4% of students expressed interest in a carpooling app specifically tailored for students, highlighting the potential for HitchHike to fulfill a need within the student community.
+
+- **Preferences for a Carpooling App**: Cost-effectiveness emerged as the top priority for 78% of students, followed by safety at 62.5%. This underscores HitchHike's commitment to providing affordable and secure transportation solutions for students.
+
+
 ## Contributing to Social Good
 
 HitchHike is more than just a ride-sharing app; it's a platform that actively contributes to social good in several impactful ways:
