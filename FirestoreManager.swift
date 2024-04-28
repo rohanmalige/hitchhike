@@ -16,6 +16,8 @@ class FirestoreManager: ObservableObject {
     var db: Firestore
     @Published var messages: [Messages]? {
         didSet {
+            print("Messages array updated:", messages ?? "nil")
+                        
             self.objectWillChange.send()
         }
     }

@@ -102,18 +102,106 @@ struct RidesView: View {
     
     @State private var selectedPostId: String?
     
+    // filter properties
+    @State private var isSearchExpanded = false
+    @State private var startLocation = ""
+    @State private var endLocation = ""
+    @State private var startLocationRadius = 10 // Default radius value
+    @State private var endLocationRadius = 10 // Default radius value
+    @State private var cost = ""
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
-                Text("Rides")
-                    .font(.custom("Avenir-Heavy", size: 24))
-//                    .padding(.top, 4)
-                    .padding(.bottom, 2)
+//                Text("Rides")
+//                    .font(.custom("Avenir-Heavy", size: 24))
+////                    .padding(.top, 4)
+//                    .padding(.bottom, 2)
+                
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .padding(.leading, 8)
+                    
+                    TextField("Search by destination", text: $searchDestination)
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .onTapGesture {
+                            // Expand the search options when tapped
+                            // You can implement this functionality here
+                            withAnimation {
+                                isSearchExpanded.toggle()
+                            }
+                            
+                        }
+                }
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 15)
+                .padding(.vertical, 10)
+                
+                if isSearchExpanded {
+                    VStack(alignment: .leading, spacing: 12) {
+                        TextField("Start Location", text: $startLocation)
+                            .padding(10)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                        
+                        TextField("End Location", text: $endLocation)
+                            .padding(10)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                        
+                        HStack {
+                            Text("Start")
+                            Picker("", selection: $startLocationRadius) {
+                                ForEach(1..<10) { radius in
+                                    Text("\(radius)")
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            
+                            Text("End")
+                            Picker("", selection: $endLocationRadius) {
+                                ForEach(1..<10) { radius in
+                                    Text("\(radius)")
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            
+                            Text("Cost")
+                            TextField("Enter Cost", text: $cost)
+                                .keyboardType(.decimalPad)
+                                .padding()
+                                .background(Color(.systemGray6))
+                                .cornerRadius(8)
+                                .padding(.horizontal, 15)
+                                .padding(.vertical, 10)
+                        }
+                        
+                        // Apply Filters button
+                        Button(action: filterSearch) {
+                            Text("Apply Filters")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                                .padding(.horizontal, 15)
+                                .padding(.vertical, 10)
+                        }
+                        .padding(.top, 10)
+                    }
+                }
+                
                 ScrollView {
                     LazyVStack(spacing: 2) {
                         ForEach(posts, id: \.id) { post in
+                            NavigationLink(destination: PostInfoPopover(postId: post.id)) {
                                 RoundedPostView(post: post)
                                     .padding(.vertical, 4)
+                            }
 //                            RoundedPostView(post: post)
 //                                .onTapGesture {
 //                                    selectedPostId = post.id
@@ -125,6 +213,11 @@ struct RidesView: View {
 //                                ))
                         }
                         Color.clear.frame(height: 100)
+                    }
+                }
+                .sheet(isPresented: $isShowingPostInfo) {
+                    if let selectedPostId = selectedPostId {
+                        PostInfoPopover(postId: selectedPostId)
                     }
                 }
                 
@@ -154,6 +247,11 @@ struct RidesView: View {
                 fetchPosts()
                 print("number \(posts.count)")
             }
+            .popover(isPresented: $isShowingPostInfo, content: {
+                if let selectedPost = selectedPost {
+                    PostInfoPopover(postId: selectedPost)
+                }
+            })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .background(
@@ -180,6 +278,10 @@ struct RidesView: View {
                 print("number of fposts \(fetchedPosts.count)")
             }
         }
+    }
+    
+    private func filterSearch() {
+        // call Firestore function
     }
 }
 
