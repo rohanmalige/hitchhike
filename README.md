@@ -4,13 +4,33 @@
 
 Welcome to HitchHike, your go-to ride-sharing application for convenient, efficient, and cost-effective transportation solutions. With HitchHike, users can seamlessly post or find rides for their desired destinations, whether it's a spontaneous trip or a pre-planned journey. 
 
-## Technologies Used
-
-HitchHike is developed for iOS using Swift, providing a seamless and intuitive experience for Apple device users. Our UI/UX design is crafted using Figma, ensuring visually appealing interfaces and smooth navigation. The backend infrastructure is powered by Firebase, offering secure storage and efficient data management for user accounts and ride information.
 
 ## What's Unique About Us
 
 HitchHike revolutionizes the ride-sharing experience by putting the power in the hands of the driver. Unlike traditional ride-sharing platforms where riders request a ride and drivers have the option to accept or decline, HitchHike allows drivers to post their ride with their desired destination. This empowers drivers to express where they intend to go, and riders can then choose whether they want to join them or not. Say goodbye to the inconvenience of driving to locations you don't want to go to. With HitchHike, drivers take control of their journey, and riders enjoy the freedom to choose their destinations.
+
+
+## Contributing to Social Good
+
+HitchHike is more than just a ride-sharing app; it's a platform that actively contributes to social good in several impactful ways:
+
+- **Reducing Traffic Congestion:** By promoting carpooling and ride-sharing, HitchHike helps alleviate traffic congestion, leading to smoother traffic flow and reduced environmental impact.
+
+- **Environmental Sustainability:** With fewer individual vehicles on the road, HitchHike contributes to a decrease in greenhouse gas emissions and air pollution, supporting efforts to combat climate change.
+
+- **Affordable Transportation:** HitchHike offers an affordable transportation option for users, particularly those with limited access to private vehicles or public transportation, thereby enhancing transportation equity.
+
+- **Community Building:** By connecting drivers and riders with shared destinations, HitchHike fosters community engagement and social interactions, strengthening social bonds and building a sense of belonging.
+
+- **Accessibility:** HitchHike enhances transportation accessibility for individuals with limited mobility or those facing transportation barriers, promoting inclusivity and ensuring that transportation remains accessible to all.
+
+Through its emphasis on sustainable transportation practices, affordability, community building, and accessibility, HitchHike actively contributes to social good, making transportation more efficient, equitable, and environmentally friendly for all users.
+
+
+## Technologies Used
+
+HitchHike is developed for iOS using Swift, providing a seamless and intuitive experience for Apple device users. Our UI/UX design is crafted using Figma, ensuring visually appealing interfaces and smooth navigation. The backend infrastructure is powered by Firebase, offering secure storage and efficient data management for user accounts and ride information.
+
 
 ## Contributors
 
