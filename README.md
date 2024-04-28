@@ -4,6 +4,10 @@
 
 Welcome to HitchHike, your go-to ride-sharing application for convenient, efficient, and cost-effective transportation solutions. With HitchHike, users can seamlessly post or find rides for their desired destinations, whether it's a spontaneous trip or a pre-planned journey. 
 
+## How HitchHike Was Born
+
+HitchHike was born out of a common struggle among students at UC Davis to travel to the Bay Area without breaking the bank on taxi services or Amtrak tickets. Observing numerous students posting on UC Davis Snapchat groups about driving to certain destinations and offering rides to others willing to split the gas, we recognized an opportunity. We saw the potential to streamline this process and provide a platform that allows drivers to post their rides, enabling other users to join their journey and save money.
+
 
 ## What's Unique About Us
 
