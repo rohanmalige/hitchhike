@@ -16,8 +16,10 @@ extension AuthenticatedView where Unauthenticated == EmptyView {
 
 struct AuthenticatedView<Content, Unauthenticated>: View where Content: View, Unauthenticated: View {
   @StateObject private var viewModel = AuthenticationViewModel()
+    @StateObject private var locationViewModel = LocationViewModel()
   @State private var presentingLoginScreen = false
   @State private var presentingProfileScreen = false
+    @State private var selectedTab: Int = 1
 
   var unauthenticated: Unauthenticated?
   @ViewBuilder var content: () -> Content
@@ -54,7 +56,9 @@ struct AuthenticatedView<Content, Unauthenticated>: View where Content: View, Un
       }
     case .authenticated:
         NavigationView {
-            NavBar()
+            NavBar(selectedTab: $selectedTab)
+                .environmentObject(viewModel)
+                .environmentObject(locationViewModel)
         }
 //      VStack {
 //        content()

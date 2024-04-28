@@ -536,4 +536,40 @@ class FirestoreManager: ObservableObject {
             }
         }
     }
+    
+    func filterSearch(startLocation: String, endLocation: String, startDate: Date, startTime: Date, cost: Double, completion: @escaping ([String]?, Error?) -> Void) {
+        let postRef = db.collection("posts")
+        
+        // create GeoPoint for start and end locations
+//        let startGeoPoint = GeoPoint(latitude: 0.0, longitude: 0.0) // Replace with actual coordinates for start location
+//        let endGeoPoint = GeoPoint(latitude: 0.0, longitude: 0.0) // Replace with actual coordinates for end location
+        
+        // Construct the query based on the provided criteria
+        var query = postRef.whereField("from", isEqualTo: startLocation)
+                            .whereField("to", isEqualTo: endLocation)
+//                            .whereField("startDate", isEqualTo: startDate)
+//                            .whereField("startTime", isEqualTo: startTime)
+                            .whereField("currentSplit", isLessThanOrEqualTo: cost + 10)
+                            .whereField("currentSplit", isGreaterThanOrEqualTo: cost - 10)
+        
+        
+        // Execute the query
+        query.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching documents: \(error.localizedDescription)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let documents = querySnapshot?.documents else {
+                print("No documents found")
+                completion([], error)
+                return
+            }
+            
+            // Process the query results
+            let postIDs = documents.map { $0.documentID }
+            completion(postIDs, nil)
+        }
+    }
 }
